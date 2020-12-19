@@ -186,6 +186,7 @@ def seed_run(root, commit, seeders):
 @click.option("--root", default="seeds", type=click.Path(),
               help="Root directory for seed scripts",
               envvar="FLASK_SEEDER_ROOT")
+@with_appcontext
 def seed_list(root):
     """ List all discoverable seeders """
     for seeder in get_seeders(root=root):
